@@ -5,21 +5,27 @@ package at.codersbay.datastructures;
  * e.g.: 1/2, 1/3, 24/37, ..
  */
 public class Fractional {
+	
+	private final Integer numerator;
+	private final Integer denominator;
 
     public Fractional(Integer numerator, Integer denominator) throws IllegalArgumentException {
-        if (denominator == 0) {
+    	if (numerator == null || denominator == null) {
+    		throw new IllegalArgumentException("You shall not pass null!");
+    	} else if (denominator == 0) {
 			throw new IllegalArgumentException("You shall not divide through zero!");
+		} else {
+			this.numerator = numerator;
+			this.denominator = denominator;
 		}
     }
 
     public Integer getNumerator() {
-        // TODO implement to fix tests in FractionalTest1
-        return -1;
+        return numerator;
     }
 
     public Integer getDenominator() {
-        // TODO implement to fix tests in FractionalTest1
-        return -1;
+        return denominator;
     }
 
     public Float asFloat() {
