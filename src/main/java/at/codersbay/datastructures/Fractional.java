@@ -6,8 +6,10 @@ package at.codersbay.datastructures;
  */
 public class Fractional {
 
-    public Fractional(Integer numerator, Integer denominator) {
-        // TODO implement to fix tests in FractionalTest1
+    public Fractional(Integer numerator, Integer denominator) throws IllegalArgumentException {
+        if (denominator == 0) {
+			throw new IllegalArgumentException("You shall not divide through zero!");
+		}
     }
 
     public Integer getNumerator() {
