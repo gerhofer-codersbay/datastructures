@@ -29,8 +29,8 @@ public class Fractional {
     }
 
     public Float asFloat() {
-        // TODO implement to fix tests in FractionalTest2
-        return -1f;
+    	Float result = ((float) this.numerator / (float) this.denominator);
+        return result;
     }
 
     @Override
