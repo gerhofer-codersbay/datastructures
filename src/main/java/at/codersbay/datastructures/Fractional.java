@@ -34,9 +34,40 @@ public class Fractional {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        // TODO implement to fix tests in FractionalTest3
-        return false;
+	public boolean equals(Object obj) {
+		// TODO handle cases where a non-fractional is passed as an argument
+		Fractional other = (Fractional) obj;
+		boolean result = false;
+		int numerator1 = this.getNumerator();
+		int numerator2 = other.getNumerator();
+		int denominator1 = this.getDenominator();
+		int denominator2 = other.getDenominator();
+		if (numerator1 == 0 && numerator2 == 0) {
+			result = true;
+		} else if (numerator1 == numerator2 && denominator1 == denominator2) {
+			result = true;
+		} else {
+			int commonDivisor1 = greatestCommonDivisor(numerator1, denominator1);
+			int commonDivisor2 = greatestCommonDivisor(numerator2, denominator2);
+			numerator1 /= commonDivisor1;
+			denominator1 /= commonDivisor1;
+			numerator2 /= commonDivisor2;
+			denominator2 /= commonDivisor2;
+			if (numerator1 == numerator2 && denominator1 == denominator2) {
+				result = true;
+			}
+		}
+		return result;
+	}
+    
+    private int greatestCommonDivisor(int numerator, int denominator) {
+    	int result = 1;
+    	if (denominator == 0) {
+    		result = numerator;
+    	} else {
+    		result = greatestCommonDivisor(denominator, (numerator % denominator));
+    	}
+    	return result;
     }
 
     public Fractional multiply(Fractional other) {
