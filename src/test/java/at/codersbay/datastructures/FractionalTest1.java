@@ -51,7 +51,7 @@ public class FractionalTest1 {
     }
 
     @Test
-    // An IllegalArgumentException should be thrown when a negative value is passed for the denominator
+    // An IllegalArgumentException should be thrown when zero is passed for the denominator
     public void testCreationWithZeroDenominator() {
         assertThrows(IllegalArgumentException.class,
                 () -> new Fractional(2, 0),
