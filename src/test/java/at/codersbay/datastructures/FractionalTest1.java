@@ -59,7 +59,7 @@ public class FractionalTest1 {
     }
 
     @Test
-    // Passing null for the numerator is valid
+    // Passing zero for the numerator is valid
     public void testCreationWithZeroNumerator() {
         Fractional fractional = new Fractional(0, 2);
 
