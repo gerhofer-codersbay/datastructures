@@ -18,7 +18,8 @@ public class FractionalTest1 {
 	}
 
 	@Test
-	// A fractional can be created if a negative natural number is passed as denominator
+	// A fractional can be created if a negative natural number is passed as
+	// denominator
 	public void testCreationWithNegativeDenominator() {
 		Fractional fractional = new Fractional(1, -2);
 
@@ -32,9 +33,10 @@ public class FractionalTest1 {
 	 * "An IllegalArgumentException should be thrown when a negative value is passed for the denominator"
 	 * But the actual test checks that negative value for the numerator + positive
 	 * for the denominator are valid. I've left the test in place and changed the
-	 * comment, but I'd like some feedback on that.
+	 * comment, because I found that this is more consistent with testCreationWithNegativeDenominator().
 	 */
-	// A fractional can be created if a negative natural number is passed as numerator
+	// A fractional can be created if a negative natural number is passed as
+	// numerator
 	public void testCreationWithNegativeNumerator() {
 		Fractional fractional = new Fractional(-1, 2);
 
