@@ -47,10 +47,6 @@ public class Fractional {
 	@Override
 	public boolean equals(Object obj) {
 		Fractional fractionalObject;
-		Integer biggerDenom = 0;  
-		Integer smallerDenom = 0;
-		Integer biggerNum = 0; 
-		Integer smallerNum = 0;
 		/*!Obj is not a Fractional or is null*/
 		if (!obj.getClass().equals(this.getClass()) || obj == null) {
 			throw new IllegalArgumentException();
