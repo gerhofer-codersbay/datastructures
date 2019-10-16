@@ -70,7 +70,7 @@ public class Fractional {
 				&& fractionalObject.getDenominator() == this.getDenominator());
 	}
 
-	private void isValidFractional(Object obj) {
+	private Boolean isValidFractional(Object obj) {
 		if (!obj.getClass().equals(this.getClass()) || obj == null) {
 			throw new IllegalArgumentException("Object is not a fractional or is null");
 		}
@@ -79,7 +79,7 @@ public class Fractional {
 				|| fractionalObject.getNumerator() == null) {
 			throw new IllegalArgumentException("You shall not pass null!");
 		}
-
+		return true;
 	}
 
     public Fractional multiply(Fractional other) {
