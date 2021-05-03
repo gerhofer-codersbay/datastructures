@@ -17,7 +17,7 @@ public class FractionalTest1 {
     }
 
     @Test
-    // A fractional can be created if negative natural numbers are passed as numerator and denominator
+    // A fractional can be created if a negative natural numbers is passed as denominator
     public void testCreationWithNegativeNumerator() {
         Fractional fractional = new Fractional(1, -2);
 
@@ -26,7 +26,7 @@ public class FractionalTest1 {
     }
 
     @Test
-    // An IllegalArgumentException should be thrown when a negative value is passed for the denominator
+    // A fractional can be created if a negative natural numbers is passed as numerator
     public void testCreationWithNegativeDenominator() {
         Fractional fractional = new Fractional(-1, 2);
 
@@ -38,28 +38,25 @@ public class FractionalTest1 {
     // An IllegalArgumentException should be thrown when a null denominator is passed
     public void testCreationWithNullDenominator() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Fractional(1, null),
-                "You shall not pass null!");
+                () -> new Fractional(1, null));
     }
 
     @Test
     // An IllegalArgumentException should be thrown when a null numerator is passed
     public void testCreationWithNullNumerator() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Fractional(null, 2),
-                "You shall not pass null!");
+                () -> new Fractional(null, 2));
     }
 
     @Test
-    // An IllegalArgumentException should be thrown when a negative value is passed for the denominator
+    // An IllegalArgumentException should be thrown when 0 is passed for the denominator
     public void testCreationWithZeroDenominator() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Fractional(2, 0),
-                "You shall not divide through zero!");
+                () -> new Fractional(2, 0));
     }
 
     @Test
-    // Passing null for the numerator is valid
+    // Passing 0 for the numerator is valid
     public void testCreationWithZeroNumerator() {
         Fractional fractional = new Fractional(0, 2);
 
